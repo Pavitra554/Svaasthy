@@ -24,7 +24,7 @@ import MapView, { Marker } from "react-native-maps";
 import { FontAwesome } from "@expo/vector-icons";
 import * as Location from "expo-location";
 import { PanGestureHandler, ScrollView } from "react-native-gesture-handler";
-import { AntDesign } from "@expo/vector-icons";
+import { FontAwesome5 } from '@expo/vector-icons';
 import Animated, {
   useAnimatedGestureHandler,
   useAnimatedStyle,
@@ -119,15 +119,15 @@ const MapComponent = () => {
               justifyContent: "center",
               alignItems: "center",
               width: 100,
+              backgroundColor: "rgba(0,0,0,0.1)",
               borderRadius: 50,
-              backgroundColor: "rgba(0,0,255,0.2)",
             }}
           >
-            <AntDesign name="enviromento" size={24} color="white" />
-            <Image
+            <FontAwesome5 name="location-arrow" size={24} color="black" />
+            {/* <Image
               style={{ height: 70, width: 70 }}
               source={require("../assets/Sc1Bg.png")}
-            />
+            /> */}
           </View>
         </Marker>
       </MapView>
