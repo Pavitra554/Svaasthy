@@ -12,11 +12,18 @@ import {
   setDoc,
 } from "firebase/firestore";
 import { app, db } from "../firebase";
-import { StyleSheet, View, Text, Dimensions, Image, FlatList } from "react-native";
+import {
+  StyleSheet,
+  View,
+  Text,
+  Dimensions,
+  Image,
+  FlatList,
+} from "react-native";
 import MapView, { Marker } from "react-native-maps";
 import { FontAwesome } from "@expo/vector-icons";
 import * as Location from "expo-location";
-import { PanGestureHandler } from "react-native-gesture-handler";
+import { PanGestureHandler, ScrollView } from "react-native-gesture-handler";
 import { AntDesign } from "@expo/vector-icons";
 import Animated, {
   useAnimatedGestureHandler,
@@ -43,11 +50,22 @@ const MapComponent = () => {
     longitude: longitude ? longitude : 27,
   };
 
-  
-  const [userDoc, setUserDoc]: any = useState([]);
+  const [data, setData]: any = useState([]);
+  const [Indiadata, setIndiadata]: any = useState([]);
 
+  const GetCountryData = async () => {
+    try {
+      const res = await fetch("https://covid-19.dataflowkit.com/v1");
+      const worlddata = await res.json();
+      setData(worlddata[0]);
+      setIndiadata(worlddata[2])
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   React.useEffect(() => {
+    GetCountryData();
     (async () => {
       let { status } = await Location.requestForegroundPermissionsAsync();
       if (status !== "granted") {
@@ -60,14 +78,6 @@ const MapComponent = () => {
       setLat(locate.coords.latitude);
       setlon(locate.coords.longitude);
     })();
-    const DocRef: any = collection(db, "Hospitals");
-    onSnapshot(DocRef, (snapshot: any) => {
-      let res: any = [];
-      snapshot.docs.forEach((doc: any) => {
-        res.push({ ...doc.data(), id: doc.id });
-      });
-      setUserDoc(res);
-    });
   }, []);
 
   const gestureHandler = useAnimatedGestureHandler({
@@ -84,16 +94,14 @@ const MapComponent = () => {
     },
   });
 
-
   // const Read = () => {
   // MARK: Reading Doc
   // You can read what ever document by changing the collection and document path here
   // const DocRef:any = collection(db,"Hospitals");
 
-
   return (
     <View style={styles.container}>
-      <StatusBar style='inverted' />
+      <StatusBar style="inverted" />
       <MapView
         minZoomLevel={16}
         initialRegion={{
@@ -104,7 +112,6 @@ const MapComponent = () => {
         }}
         style={styles.map}
       >
-
         <Marker coordinate={con} title="My location">
           <View
             style={{
@@ -137,14 +144,304 @@ const MapComponent = () => {
               backgroundColor: "#fff",
               borderTopLeftRadius: 20,
               borderTopRightRadius: 20,
+              alignItems: "center",
             },
             rstyle,
           ]}
         >
-          
-          <View
-            style={{ height: 360, backgroundColor: "rgba(0,0,255,0.5)" }}
-          ></View>
+          <View style={styles.bar}></View>
+          {data["Total Cases_text"] ? (
+            <ScrollView>
+            <View>
+              <Text style={styles.headText}> World</Text>
+              <Text style={styles.lastUpdate}>
+                {" "}
+                Last Updated on {data["Last Update"]}
+              </Text>
+              <View style={styles.dataBox1}>
+                <Text
+                  style={{
+                    fontSize: 18,
+                    fontWeight: "bold",
+                    color: "#FF4128",
+                    paddingBottom: 10,
+                  }}
+                >
+                  Total Case's Confirmed
+                </Text>
+                <View
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 18,
+                      fontWeight: "bold",
+                      color: "#FF4128",
+                      paddingBottom: 2,
+                    }}
+                  >
+                    {data["Total Cases_text"]}
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: 16,
+                      fontWeight: "bold",
+                      color: "#FF4128",
+                      paddingTop: 2,
+                      paddingLeft: 10,
+                      opacity:0.5
+                    }}
+                  >
+                    {data["New Cases_text"]}
+                  </Text>
+                </View>
+              </View>
+
+              
+              <View style={styles.dataBox2}>
+                <Text
+                  style={{
+                    fontSize: 18,
+                    fontWeight: "bold",
+                    color: "#0030DA",
+                    paddingBottom: 10,
+                  }}
+                >
+                  Total Active Case's
+                </Text>
+                <View
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 18,
+                      fontWeight: "bold",
+                      color: "#0030DA",
+                      paddingBottom: 2,
+                    }}
+                  >
+                    {data["Active Cases_text"]}
+                  </Text>
+                </View>
+              </View>
+
+
+
+              <View style={styles.dataBox3}>
+                <Text
+                  style={{
+                    fontSize: 18,
+                    fontWeight: "bold",
+                    color: "#029313",
+                    paddingBottom: 10,
+                  }}
+                >
+                  Total Recovered_text
+                </Text>
+                <View
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 18,
+                      fontWeight: "bold",
+                      color: "#029313",
+                      paddingBottom: 2,
+                    }}
+                  >
+                    {data["Total Recovered_text"]}
+                  </Text>
+                </View>
+              </View>
+
+
+              <View style={styles.dataBox4}>
+                <Text
+                  style={{
+                    fontSize: 18,
+                    fontWeight: "bold",
+                    color: "#343232",
+                    paddingBottom: 10,
+                  }}
+                >
+                  Total Death's
+                </Text>
+                <View
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 18,
+                      fontWeight: "bold",
+                      color: "#343232",
+                      paddingBottom: 2,
+                    }}
+                  >
+                    {data["Total Deaths_text"]}
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: 16,
+                      fontWeight: "bold",
+                      color: "#343232",
+                      paddingTop: 2,
+                      paddingLeft: 10,
+                      opacity:0.5
+                    }}
+                  >
+                    {data["New Deaths_text"]}
+                  </Text>
+                </View>
+              </View>
+
+
+            </View>
+
+
+
+
+
+            <View>
+              <Text style={styles.headText}>India</Text>
+              <Text style={styles.lastUpdate}>
+                {" "}
+                Last Updated on {Indiadata["Last Update"]}
+              </Text>
+              <View style={styles.dataBox1}>
+                <Text
+                  style={{
+                    fontSize: 18,
+                    fontWeight: "bold",
+                    color: "#FF4128",
+                    paddingBottom: 10,
+                  }}
+                >
+                  Total Case's Confirmed
+                </Text>
+                <View
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 18,
+                      fontWeight: "bold",
+                      color: "#FF4128",
+                      paddingBottom: 2,
+                    }}
+                  >
+                    {Indiadata["Total Cases_text"]}
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: 16,
+                      fontWeight: "bold",
+                      color: "#FF4128",
+                      paddingTop: 2,
+                      paddingLeft: 10,
+                      opacity:0.5
+                    }}
+                  >
+                    {Indiadata["New Cases_text"]}
+                  </Text>
+                </View>
+              </View>
+
+
+
+              <View style={styles.dataBox3}>
+                <Text
+                  style={{
+                    fontSize: 18,
+                    fontWeight: "bold",
+                    color: "#029313",
+                    paddingBottom: 10,
+                  }}
+                >
+                  Total Recovered_text
+                </Text>
+                <View
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 18,
+                      fontWeight: "bold",
+                      color: "#029313",
+                      paddingBottom: 2,
+                    }}
+                  >
+                    {Indiadata["Total Recovered_text"]}
+                  </Text>
+                </View>
+              </View>
+
+
+              <View style={styles.dataBox4}>
+                <Text
+                  style={{
+                    fontSize: 18,
+                    fontWeight: "bold",
+                    color: "#343232",
+                    paddingBottom: 10,
+                  }}
+                >
+                  Total Death's
+                </Text>
+                <View
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 18,
+                      fontWeight: "bold",
+                      color: "#343232",
+                      paddingBottom: 2,
+                    }}
+                  >
+                    {Indiadata["Total Deaths_text"]}
+                  </Text>
+                  <Text
+                    style={{
+                      fontSize: 16,
+                      fontWeight: "bold",
+                      color: "#343232",
+                      paddingTop: 2,
+                      paddingLeft: 10,
+                      opacity:0.5
+                    }}
+                  >
+                    {Indiadata["New Deaths_text"]}
+                  </Text>
+                </View>
+              </View>
+
+
+            </View>
+            </ScrollView>
+          ) : (
+            <Text style={styles.headText}>Loading...</Text>
+          )}
         </Animated.View>
       </PanGestureHandler>
     </View>
@@ -166,4 +463,68 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  bar: {
+    backgroundColor: "rgba(0,0,0,0.2)",
+    height: 5,
+    width: 50,
+    borderRadius: 10,
+    marginTop: 10,
+  },
+  headText: {
+    fontSize: 22,
+    fontWeight: "bold",
+    marginTop: 20,
+    color: "#333",
+    textAlign: "center",
+  },
+  lastUpdate: {
+    color: "#333",
+    opacity: 0.5,
+    fontSize: 12,
+    textAlign: "center",
+  },
+  dataBox1: {
+    height: 80,
+    width: width - 30,
+    backgroundColor: "rgba(255,65,40,0.2)",
+    borderRadius: 20,
+    marginTop: 10,
+    display:'flex',
+    justifyContent:'center',
+    paddingLeft:15,
+    paddingTop:5
+  },
+  dataBox2: {
+    height: 80,
+    width: width - 30,
+    backgroundColor: "rgba(0,48,218,0.2)",
+    borderRadius: 20,
+    marginTop: 10,
+    display:'flex',
+    justifyContent:'center',
+    paddingLeft:15,
+    paddingTop:5
+  },
+  dataBox3: {
+    height: 80,
+    width: width - 30,
+    backgroundColor: "rgba(37,255,7,0.2)",
+    borderRadius: 20,
+    marginTop: 10,
+    display:'flex',
+    justifyContent:'center',
+    paddingLeft:15,
+    paddingTop:5
+  },
+  dataBox4: {
+    height: 80,
+    width: width - 30,
+    backgroundColor: "rgba(52,50,50,0.2)",
+    borderRadius: 20,
+    marginTop: 10,
+    display:'flex',
+    justifyContent:'center',
+    paddingLeft:15,
+    paddingTop:5
+  }
 });
