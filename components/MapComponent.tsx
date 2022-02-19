@@ -32,6 +32,7 @@ import Animated, {
   withSpring,
 } from "react-native-reanimated";
 import { StatusBar } from "expo-status-bar";
+import { Ionicons } from '@expo/vector-icons';
 const { height, width } = Dimensions.get("window");
 
 const MapComponent = () => {
@@ -149,7 +150,9 @@ const MapComponent = () => {
             rstyle,
           ]}
         >
-          <View style={styles.bar}></View>
+          <View style={styles.bar}>
+          <Ionicons name="ios-chevron-up" size={24} color="black" />
+          </View>
           {data["Total Cases_text"] ? (
             <ScrollView>
             <View>
@@ -464,16 +467,15 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   bar: {
-    backgroundColor: "rgba(0,0,0,0.2)",
-    height: 5,
-    width: 50,
-    borderRadius: 10,
-    marginTop: 10,
+    display:'flex',
+    justifyContent:'center',
+    marginTop:10,
+    marginBottom:20
+ 
   },
   headText: {
     fontSize: 22,
     fontWeight: "bold",
-    marginTop: 20,
     color: "#333",
     textAlign: "center",
   },
