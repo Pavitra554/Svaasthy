@@ -81,7 +81,7 @@ export default function Home({ navigation }:any) {
       >
         {userDoc &&
           userDoc.map((e: any) => {
-            return <Card data={e} navigation={navigation} />;
+            return <Card key={e.id} data={e} navigation={navigation} />;
           })}
       </ScrollView>
     </SafeAreaView>
