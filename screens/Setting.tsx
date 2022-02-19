@@ -56,7 +56,7 @@ export default function Settings() {
         </View>
         <View style={styles.copyr}>
           <AntDesign name="copyright" size={20} color="rgba(0,0,0,0.3)" />
-          <Text style={styles.copyrtext}>2022 DocThelp, All right's reserved</Text>
+          <Text style={styles.copyrtext}>2022 Svaasthy, All right's reserved</Text>
         </View>
       </View>
     </>
