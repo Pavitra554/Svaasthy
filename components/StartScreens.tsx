@@ -35,149 +35,35 @@ interface props {
 const StartScreens: React.FC<props> = ({ translateX, i, title }) => {
   const navigation = useNavigation();
   const Login: any = "Login";
-  const inputval = [(i - 1) * width, i * width, (i + 1) * width];
 
-  const rstyle = useAnimatedStyle(() => {
-    const scale = interpolate(
-      translateX.value,
-      inputval,
-      [1, 1, 1],
-      Extrapolate.CLAMP
-    );
-    const opacity = interpolate(
-      translateX.value,
-      inputval,
-      [0, 1, 0],
-      Extrapolate.CLAMP
-    );
-    return {
-      transform: [{ scale }],
-      opacity,
-    };
-  });
-  const rtext = useAnimatedStyle(() => {
-    const translateY = interpolate(
-      translateX.value,
-      inputval,
-      [height/2, 0, -height/2],
-      Extrapolate.CLAMP
-    );
-    const op = interpolate(
-      translateX.value,
-      inputval,
-      [0, 1, 0],
-      Extrapolate.CLAMP
-    );
-    return {
-      transform: [{ translateY }],
-      opacity:op
-    };
-  });
-
-  const scale = useSharedValue(0);
-  const Rstart = useAnimatedStyle(()=>{
-    return{
-      transform:[{scale:scale.value}]
-    };
-  });
-  useEffect(()=>{
-    scale.value = withTiming(1,{duration:200})
-  },[])
   return (
     <>
-      <SafeAreaView >
-      <StatusBar style="dark"/>
-        <Animated.View style={[styles.scr,Rstart]}>
+      <SafeAreaView>
+        <StatusBar style="dark" />
+        <Animated.View style={[styles.scr, ]}>
           {i === 0 && (
-            <Animated.View style={[styles.s0, rstyle]}>
+            <Animated.View style={[styles.s0, ]}>
               <View style={styles.bg}></View>
-              <Animated.Text style={[styles.textbig,rtext]}>DocThelp</Animated.Text>
-              <Animated.View style={rtext}>
+              <Animated.Text style={[styles.textbig]}>
+              
+              </Animated.Text>
+              <Animated.View >
                 <Image
-                  style={{ height: 300, width: 300 }}
+                  style={{ height: 300, width: 300,borderRadius:500,}}
                   source={require("../assets/Sc1Bg.png")}
                 />
               </Animated.View>
-              <Animated.View style={rtext}>
+              <Animated.View >
                 <Text style={styles.textSlogen}>Doctor's Everytime</Text>
                 <Text style={styles.textSlogen}>With You.</Text>
-                </Animated.View>
-                <Animated.View style={rtext}>
+              </Animated.View>
+              <Animated.View >
                 <Text style={styles.textSlogensm}>
                   Get suggestion's from your Doctor anytime anywhere, Find
                   Hospital's, Medicine Center's and Oxyzen and many more.
                 </Text>
-                </Animated.View>
-              {i === 0 && (
-                <Animated.View style={[styles.area,rtext]}>
-                  <View
-                    style={[styles.bars, { backgroundColor: "#171717" }]}
-                  ></View>
-                  <View style={styles.bars}></View>
-                </Animated.View>
-              )}
-
-              <Animated.View style={[styles.swipe,rtext]}>
-                <Text style={styles.swipeText}>Swipe</Text>
-                <MaterialIcons
-                  name="keyboard-arrow-right"
-                  size={24}
-                  color="black"
-                />
               </Animated.View>
-            </Animated.View>
-          )}
 
-          {i === 1 && (
-            <Animated.View style={[styles.s1, rstyle]}>
-              <Text style={styles.textbig1}>DocThelp</Text>
-              <LinearGradient
-                colors={["#737373", "#393838", "#171717"]}
-                style={styles.infoBox}
-              >
-                <Text style={styles.infoboxhead}>Need a Doctor ?</Text>
-                <Text style={styles.infoboxbody}>
-                  jdbf dsfsd sdfsfsdfsd{"\n"}dsd dfsd dfgdfdf{'\n'}sdfd sdfdfg gdf{'\n'}dfsdfsdsf
-                </Text>
-                <Image
-                  style={{top: -32, left: 230, position: "absolute" }}
-                  source={require("../assets/doctor.png")}
-                />
-              </LinearGradient>
-              <LinearGradient
-                colors={["#737373", "#393838", "#171717"]}
-                style={styles.infoBox}
-              >
-                <Text style={styles.infoboxheadinverted}>Feeling Unwell ?</Text>
-                <Text style={styles.infoboxbodyinverted}>
-                  jdbf dsfsd sdfsfsdfsd{"\n"}dsd dfsd dfgdfdf{'\n'}sdfd sdfdfg gdf{'\n'}dfsdfsdsf
-                </Text>
-                <Image
-                  style={{ top: -32, left: 20, position: "absolute" }}
-                  source={require("../assets/doctor.png")}
-                />
-              </LinearGradient>
-              <LinearGradient
-                colors={["#737373", "#393838", "#171717"]}
-                style={styles.infoBox}
-              >
-                <Text style={styles.infoboxhead}>Having Question's?</Text>
-                <Text style={styles.infoboxbody}>
-                  jdbf dsfsd sdfsfsdfsd{"\n"}dsd dfsd dfgdfdf{'\n'}sdfd sdfdfg gdf{'\n'}dfsdfsdsf
-                </Text>
-                <Image
-                  style={{ top: -32, left: 230, position: "absolute" }}
-                  source={require("../assets/doctor.png")}
-                />
-              </LinearGradient>
-              {i === 1 && (
-                <View style={[styles.area]}>
-                  <View style={styles.bars}></View>
-                  <View
-                    style={[styles.bars, { backgroundColor: "#171717" }]}
-                  ></View>
-                </View>
-              )}
               <TouchableWithoutFeedback
                 onPress={() => navigation.navigate(Login)}
               >
@@ -189,8 +75,6 @@ const StartScreens: React.FC<props> = ({ translateX, i, title }) => {
                   <AntDesign name="arrowright" size={24} color="white" />
                 </LinearGradient>
               </TouchableWithoutFeedback>
-
-             
             </Animated.View>
           )}
         </Animated.View>
@@ -227,7 +111,7 @@ const styles = StyleSheet.create({
   },
   getStarted: {
     height: 60,
-    width: 200,
+    width: 250,
     borderRadius: 50,
     display: "flex",
     justifyContent: "center",
@@ -235,7 +119,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "#000",
     elevation: 6,
-    marginTop:5
+    marginTop: 70,
+
   },
   s0: {
     display: "flex",
@@ -292,51 +177,7 @@ const styles = StyleSheet.create({
     color: "rgba(0,0,0,0.5)",
     paddingTop: 30,
   },
-  s1: {
-    display: "flex",
-    alignItems: "center",
-    paddingTop: 50,
-  },
-  infoBox: {
-    height: 150,
-    width: width - 20,
-    borderRadius: 20,
-    marginTop: 32,
-    elevation: 6,
-  },
-  infoboxhead: {
-    paddingHorizontal: 20,
-    paddingTop: 20,
-    color: "#fff",
-    fontSize: 20,
-    fontWeight: "bold",
-  },
-  infoboxbody: {
-    paddingHorizontal: 20,
-    paddingVertical: 5,
-    color: "#fff",
-    fontSize: 12,
-  },
-  infoboxheadinverted:{
-    paddingLeft: 150,
-    paddingTop: 20,
-    color: "#fff",
-    fontSize: 20,
-    fontWeight: "bold",
-    
-  },
-  infoboxbodyinverted:{
-    paddingLeft: 150,
-    paddingVertical: 5,
-    color: "#fff",
-    fontSize: 12,
   
-  },
-  s2: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-  },
 });
 
 export default StartScreens;

@@ -26,7 +26,7 @@ export default function InterpolateScreen() {
     translateX.value = e.contentOffset.x;
   });
 
-  const data = ["screeen1", "screen2"];
+  const data = ["screeen1"];
 
   return (
     <Animated.ScrollView
