@@ -39,7 +39,7 @@ export default function Login() {
   return (
       <View style={styles.main}>
         <Animated.View style={[styles.upDot,rstyle]}></Animated.View>
-        <Animated.Text style={[styles.textbig,rstyle]}>Welcome To{'\n'}DocThelp</Animated.Text>
+        <Animated.Text style={[styles.textbig,rstyle]}>Welcome To{'\n'}Svaasthy</Animated.Text>
         <Animated.Image style={[{height:350,width:350,marginBottom:50},rstyle]} source={require('../assets/loginBg.png')}/>
 
         <TouchableWithoutFeedback
