@@ -74,7 +74,7 @@ We are a group of very enthusiastic developers who are open to learning and expe
         <img src="./gif/meetw.jpeg" width="100px;" alt=""/>
         <br /><sub><b>Meetabhashini Parida</b></sub><br />
       <a href="https://github.com/meetaww"><img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'></a>
-      <a href="mailto:adityaarpansahoo@gmail.com"><img src='https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white'></a>
+      <a href="mailto:paridameetabhashini@gmail.com "><img src='https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white'></a>
       <a href="https://www.linkedin.com/in/meetabhashini-parida-730597212/"><img src='https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white'></a>
       <a href="https://www.instagram.com/_.meetaww._/"><img src='https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white'></td></a>
 </tr>
