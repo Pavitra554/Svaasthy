@@ -98,7 +98,7 @@ We are a group of very enthusiastic developers who are open to learning and expe
 </tr>
  <tr>
     <td align="center">
-        <img src="https://github.com/arpanaditya/Ment-Ally/blob/main/Web-App/src/screens/About/img/Ankit.jpeg" width="100px;" alt=""/>
+        <img src="./gif/Ankit.jpeg" width="100px;" alt=""/>
         <br /><sub><b>Ankit Singh</b></sub><br />
       <a href="https://github.com/AnkitSingh0702"><img src='https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white'></a>
       <a href="mailto:ankitsingh0702@gmail.com"><img src='https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white'></a>
