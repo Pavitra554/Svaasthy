@@ -23,10 +23,6 @@ Hence, our application provides a shortcut by connecting you with the hospitals 
 <p align='center'><img src='./gif/g4.gif' alt="Setting" ></p>
 
 
-
-## How we built it 🧠💻
-We used React.js in the frontend and Node.js in the backend and MongoDB as our database. We have used Lottie animation and Framer motion for some components like buttons and illustrations for our website. We have created an API using Express and this API fetches data from our database in the backend for contents in the blogs section. Heroku app is used for hosting the backend. We have used Mongoose which connects our database to Express. We have used firebase for hosting the frontend and then we have connected it to our custom domain.
-
 ## Challenges we ran into :slightly_frowning_face:
 We faced numerous challenges throughout the journey. First, we have decided to work on VS-Code Live share. But we all were new to it. Sometimes it is the connection issues and sometimes it’s our lack of experience in Live Share feature. It took a lot of time to overcome this issue. 
 After this we have faced issues while writing codes for responsive design. Sometimes the components were distorted and moved from their places. It took time to place them in their right position. Placing the elements in their position and designing for responsiveness was our big challenges.
