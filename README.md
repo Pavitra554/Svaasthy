@@ -12,15 +12,15 @@ Hence, our application provides a shortcut by connecting you with the hospitals 
 
 </p>
 <h2>How it looks:star_struck: </h2>
-<p ><strong>Intro & Login Screen</strong></p>
-<p ><img src='./gif/g1.gif' alt="Login" ></p>
-<p ><strong>Location & Covid Data Screen</strong></p>
-<p ><img src='./gif/g2.gif' alt="Location" ></p>
-<p ><strong>Home Screen</strong></p>
-<p ><img src='./gif/g3.gif' alt="Home" ></p>
+<p align='center'><strong>Intro & Login Screen</strong></p>
+<p align='center'><img src='./gif/g1.gif' alt="Login" ></p>
+<p align='center'><strong>Location & Covid Data Screen</strong></p>
+<p align='center'><img src='./gif/g2.gif' alt="Location" ></p>
+<p align='center'><strong>Home Screen</strong></p>
+<p align='center' ><img src='./gif/g3.gif' alt="Home" ></p>
 
-<p ><strong>Setting Screen</strong></p>
-<p ><img src='./gif/g4.gif' alt="Setting" ></p>
+<p align='center'><strong>Setting Screen</strong></p>
+<p align='center'><img src='./gif/g4.gif' alt="Setting" ></p>
 
 
 
@@ -39,19 +39,6 @@ Out of all the hurdles that we faced during this short period, the one that taug
 We are a group of very enthusiastic developers who are open to learning and experimenting with new techs. The thing which is common among us is that we love hackathons 🤩. In this hackathon, we have learnt how to use Firestore database. We have also experienced Google authentication and had our hands-on-experience with Alan AI as well. Altogether, we have learnt a lot of things and aim towards learning and growing more and more.
 
 ## Built With :hammer_and_wrench:
-- [ ] <img src="https://img.shields.io/badge/MongoDB-white?style=for-the-badge&logo=mongodb&logoColor=4EA94B"> <!--MongoDB-->
-- [ ] <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"> <!--Expressjs--> 
-- [ ] <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"> <!--React-->
-- [ ]  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"> <!--NodeJs-->
-- [ ] <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white"> <!--React-Router-Dom-->
-- [ ]  <img src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E"> <!--JavaScript-->  
-- [ ] <img src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white"><!--Npm-->
-- [ ] <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <!--CSS3-->
-- [ ] <img src="https://github.com/MarioTerron/logo-images/blob/master/logos/mongoose.png" height="20"> <!--Mongoose-->
-- [ ] <img src="https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black"> <!--Firebase-->
-- [ ] <img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white"> <!--Heroku-->
-- [ ]  <img src="https://img.shields.io/badge/Framer%20motion-black?style=for-the-badge&logo=framer&logoColor=white"/><!--Farmer motion-->
-- [ ]  <img src="https://static.lottiefiles.com/images/v3/lottiefiles-logo.svg" height="25" ><!--Lottie Animation-->
 
 
 
