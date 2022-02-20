@@ -106,5 +106,5 @@ We are a group of very enthusiastic developers who are open to learning and expe
       <a href="https://instagram.com/ankitsingh0702"><img src='https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white'></td></a>
 </tr>
 </table>
-
+<p align="center"><img src="./gif/electrothon.png"></p>
 <h3 align="center">Made with 💝 by Team Svaasthy .</h3>
