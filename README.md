@@ -39,8 +39,30 @@ Out of all the hurdles that we faced during this short period, the one that taug
 We are a group of very enthusiastic developers who are open to learning and experimenting with new techs. The thing which is common among us is that we love hackathons 🤩. In this hackathon, we have learnt how to use Firestore database. We have also experienced Google authentication and had our hands-on-experience with Alan AI as well. Altogether, we have learnt a lot of things and aim towards learning and growing more and more.
 
 ## Built With :hammer_and_wrench:
-
-
+<a href="https://reactnative.dev/">
+    <img height="35px" src="https://img.shields.io/badge/React_Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+  </a><br/>
+  <a href="https://expo.dev/">
+    <img height="35px" src="https://img.shields.io/badge/Expo-1B1F23?style=for-the-badge&logo=expo&logoColor=white">
+  </a><br/>
+  <a href="https://firebase.google.com/">
+    <img height="35px" src="https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black">
+  </a><br/>
+  <a  href="https://www.javascript.com/">
+    <img height="35px" src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white">
+  </a><br/>
+  <a  href="https://www.typescriptlang.org/">
+    <img height="35px" src="https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E">
+  </a><br/>
+  <a aria-label="NPM version" href="https://www.npmjs.com/">
+    <img alt="" src="https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white">
+  </a><br/>
+    <a aria-label="NPM version" href="https://code.visualstudio.com/">
+    <img alt="" src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white">
+  </a><br/>
+  <a aria-label="NPM version" href="https://github.com/">
+    <img alt="" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white">
+  </a><br/>
 
 
   
